@@ -42,6 +42,8 @@ exec --no-startup-id tilda &
 exec --no-startup-id feh --bg-fill /home/liut/.liut/BingWallpaper.jpg &
 exec --no-startup-id picom -f &
 exec --no-startup-id /usr/bin/lxqt-policykit-agent &
+exec --no-startup-id onedrivegui &
+exec --no-startup-id keepassxc %f &
 
 bindsym Print exec "flameshot gui"
 
