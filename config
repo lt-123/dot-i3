@@ -61,7 +61,10 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty
+# bindsym $mod+Return exec kitty
+bindsym $mod+Return exec nemo
+# nome
+bindsym $mod+n exec nemo
 
 # kill focused window
 bindsym $mod+q kill
