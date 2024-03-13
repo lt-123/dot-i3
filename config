@@ -78,7 +78,7 @@ bindsym $mod+q kill
 # bindsym $mod+d exec --no-startup-id dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-bindsym $mod+space exec --no-startup-id rofi -show drun -theme nord -show-icons
+bindsym Mod1+space exec --no-startup-id rofi -show drun -theme nord -show-icons
 bindsym $mod+d exec --no-startup-id rofi -show drun -theme ~/.local/share/rofi/launchpad -show-icons
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
@@ -129,7 +129,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+v floating toggle
 
 # change focus between tiling / floating windows
-# bindsym $mod+space focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
