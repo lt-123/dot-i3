@@ -47,6 +47,7 @@ exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1 &
 exec --no-startup-id onedrivegui &
 exec --no-startup-id keepassxc %f &
 exec --no-startup-id crow &
+exec --no-startup-id /home/liut/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox %u
 
 bindsym Print exec "spectacle -r"
 
@@ -97,6 +98,9 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
+
+bindsym Mod1+Tab focus right
+bindsym Mod1Shift+Tab focus left
 
 # move focused window
 bindsym $mod+Shift+j move left
@@ -149,7 +153,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10: windows"
+set $ws10 "10: virt"
 
 # switch to workspace
 #bindsym $mod+x workspace number $wsx
@@ -164,6 +168,18 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
+# switch to workspace with numpad keys
+bindcode $mod+87 workspace 1
+bindcode $mod+88 workspace 2
+bindcode $mod+89 workspace 3
+bindcode $mod+83 workspace 4
+bindcode $mod+84 workspace 5
+bindcode $mod+85 workspace 6
+bindcode $mod+79 workspace 7
+bindcode $mod+80 workspace 8
+bindcode $mod+81 workspace 9
+bindcode $mod+90 workspace 10
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -175,6 +191,49 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# move focused container to workspace with numpad keys
+bindcode $mod+Shift+87 	 move container to workspace  $ws1
+bindcode $mod+Shift+88 	 move container to workspace  $ws2
+bindcode $mod+Shift+89 	 move container to workspace  $ws3
+bindcode $mod+Shift+83 	 move container to workspace  $ws4
+bindcode $mod+Shift+84 	 move container to workspace  $ws5
+bindcode $mod+Shift+85 	 move container to workspace  $ws6
+bindcode $mod+Shift+79 	 move container to workspace  $ws7
+bindcode $mod+Shift+80 	 move container to workspace  $ws8
+bindcode $mod+Shift+81 	 move container to workspace  $ws9
+bindcode $mod+Shift+90 	 move container to workspace  $ws10
+
+
+# bind program to workspace and focus to them on startup:
+assign [class="vivaldi"] $ws1
+assign [class="code"] $ws2
+assign [class="studio"] $ws2
+assign [class="qq"] $ws3
+assign [class="wechat"] $ws3
+assign [class="dingtalk"] $ws3
+assign [class="TelegramDesktop"] $ws3
+assign [class="obsidian"] $ws3
+assign [class="remmina"] $ws10
+
+# automatic set focus new window if it opens on another workspace than the current:
+for_window [class="vivaldi"] focus
+for_window [class="code"] focus
+for_window [class="studio"] focus
+for_window [class="qq"] focus
+for_window [class="wechat"] focus
+for_window [class="dingtalk"] focus
+for_window [class="TelegramDesktop"] focus
+for_window [class="obsidian"] focus
+for_window [class="remmina"] focus
+
+
+# set floating (nontiling) for special apps
+for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
+for_window [class="qt5ct" instance="qt5ct"] floating enable
+for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
+for_window [class="crow" instance="crow"] floating enable
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -251,4 +310,23 @@ client.background       #242424
 ##STOP THEMING WM
 
 exec xset r rate 300 50 &
+
+
+set $Locker /home/liut/.config/i3/i3lock && sleep 1
+
+bindsym $mod+Control+l exec $Locker
+
+set $mode_system (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+    
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Pause mode "$mode_system"
 
