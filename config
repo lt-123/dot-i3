@@ -316,7 +316,7 @@ set $Locker /home/liut/.config/i3/i3lock && sleep 1
 
 bindsym $mod+Control+l exec $Locker
 
-set $mode_system (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+set $mode_system System (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
     bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
