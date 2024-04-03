@@ -34,20 +34,21 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet &
+exec --no-startup-id nm-applet
 
-exec --no-startup-id fcitx5 &
-exec --no-startup-id tilda &
+exec --no-startup-id fcitx5
+exec --no-startup-id tilda
 # exec_always feh --bg-fill /home/liut/.liut/BingWallpaper.jpg &
 # exec_always picom -f &
-exec --no-startup-id feh --bg-fill /home/liut/.liut/ctp-mountains.png &
+exec --no-startup-id feh --bg-fill /home/liut/.liut/ctp-mountains.png
 exec --no-startup-id picom -f &
-exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1 &
+exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 # syncthing
-exec --no-startup-id onedrivegui &
-exec --no-startup-id keepassxc %f &
-exec --no-startup-id crow &
+exec --no-startup-id onedrivegui
+exec --no-startup-id keepassxc %f
+exec --no-startup-id crow
 exec --no-startup-id /home/liut/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox %u
+exec --no-startup-id clipcatd -c /home/liut/.config/clipcat/clipcatd.toml
 
 bindsym Print exec "spectacle -r"
 
@@ -233,6 +234,7 @@ for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="qt5ct" instance="qt5ct"] floating enable
 for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
 for_window [class="crow" instance="crow"] floating enable
+for_window [class="copyq" instance="copyq"] floating enable
 
 
 # reload the configuration file
