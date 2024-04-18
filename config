@@ -50,7 +50,8 @@ exec --no-startup-id crow
 exec --no-startup-id /home/liut/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox %u
 exec --no-startup-id clipcatd -c /home/liut/.config/clipcat/clipcatd.toml
 
-bindsym Print exec "spectacle -r"
+# bindsym Print exec "spectacle -r"
+bindsym Print exec "flameshot gui"
 
 
 # Use pactl to adjust volume in PulseAudio.
@@ -101,7 +102,7 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 bindsym Mod1+Tab focus right
-bindsym Mod1Shift+Tab focus left
+bindsym Mod1+Shift+Tab focus left
 
 # move focused window
 bindsym $mod+Shift+j move left
