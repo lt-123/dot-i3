@@ -70,9 +70,9 @@ tiling_drag modifier titlebar
 
 # start a terminal
 # bindsym $mod+Return exec kitty
-bindsym $mod+Return exec dolphin
+bindsym $mod+Return exec xdg-open ~
 # nome
-bindsym $mod+n exec dolphin
+bindsym $mod+n exec xdg-open ~
 
 # kill focused window
 bindsym $mod+q kill
@@ -215,7 +215,7 @@ assign [class="qq"] $ws3
 assign [class="wechat"] $ws3
 assign [class="dingtalk"] $ws3
 assign [class="TelegramDesktop"] $ws3
-assign [class="obsidian"] $ws3
+assign [class="obsidian"] $ws4
 assign [class="remmina"] $ws10
 
 # automatic set focus new window if it opens on another workspace than the current:
@@ -236,6 +236,7 @@ for_window [class="qt5ct" instance="qt5ct"] floating enable
 for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
 for_window [class="crow" instance="crow"] floating enable
 for_window [class="copyq" instance="copyq"] floating enable
+for_window [class="tilda" instance="tilda"] floating enable
 
 
 # reload the configuration file
