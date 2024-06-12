@@ -40,13 +40,15 @@ exec --no-startup-id fcitx5
 exec --no-startup-id tilda
 # exec_always feh --bg-fill /home/liut/.liut/BingWallpaper.jpg &
 # exec_always picom -f &
-exec --no-startup-id feh --bg-fill /home/liut/.liut/ctp-mountains.png
+# exec --no-startup-id feh --bg-fill /home/liut/.liut/ctp-mountains.png
+exec --no-startup-id feh --bg-fill /home/liut/.liut/240521.jpg
+
 exec --no-startup-id picom -f &
 #exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # syncthing
-exec --no-startup-id onedrivegui
+#exec --no-startup-id onedrivegui
 exec --no-startup-id keepassxc %f
 exec --no-startup-id crow
 exec --no-startup-id /home/liut/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox %u
