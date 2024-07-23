@@ -41,13 +41,14 @@ exec --no-startup-id tilda
 # exec_always feh --bg-fill /home/liut/.liut/BingWallpaper.jpg &
 # exec_always picom -f &
 # exec --no-startup-id feh --bg-fill /home/liut/.liut/ctp-mountains.png
-exec --no-startup-id feh --bg-fill /home/liut/.liut/240521.jpg
+exec --no-startup-id feh --bg-fill /home/liut/.liut/BingWallpaper.jpg
 
 exec --no-startup-id picom -f &
 #exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # syncthing
+exec --no-startup-id synology-drive
 #exec --no-startup-id onedrivegui
 exec --no-startup-id keepassxc %f
 exec --no-startup-id crow
@@ -241,6 +242,8 @@ for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enabl
 for_window [class="crow" instance="crow"] floating enable
 for_window [class="copyq" instance="copyq"] floating enable
 for_window [class="tilda" instance="tilda"] floating enable
+for_window [class="scrcpy" instance="scrcpy"] floating enable
+for_window [class="krfb" instance="krfb"] floating enable
 
 
 # reload the configuration file
